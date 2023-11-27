@@ -35,6 +35,9 @@
         },
         "production": {
           "buildTarget": "learn-nx-2023:build:production"
+        },
+        "repl": {
+          "buildTarget": "learn-nx-2023:build-repl"
         }
       }
     },
@@ -57,6 +60,18 @@
           "ci": true,
           "codeCoverage": true
         }
+      }
+    },
+    "build-repl": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/learn-nx-2023",
+        "main": "apps/learn-nx-2023/src/repl.ts",
+        "tsConfig": "apps/learn-nx-2023/tsconfig.app.json",
+        "assets": []
       }
     }
   },
